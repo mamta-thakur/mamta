@@ -413,12 +413,16 @@ function App() {
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-slate-800 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">
-                    {project.shortDescription || project.description.split("\n")[0]}
+                <div className="p-6 ">
+                  <h3 className="text-xl font-semibold text-slate-800 mb-3">{project.title.length > 28
+                    ? project.title.slice(0, project.title.lastIndexOf(' ', 28)) + '...'
+                    : project.title}</h3>
+                  <p className="text-gray-600 mb-6">
+                    {project.description.length > 100
+                    ? project.description.slice(0, project.description.lastIndexOf(' ', 100)) + '...'
+                    : project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1 mb-4">
                     {project.tech.map((tech) => (
                       <span key={tech} className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">
                         {tech}
@@ -477,7 +481,7 @@ function App() {
                   {selectedProject.tech.map((tech: string) => (
                     <span
                       key={tech}
-                      className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm"
+                      className="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs"
                     >
                       {tech}
                     </span>
@@ -498,7 +502,6 @@ function App() {
               </div>
             </div>
           )}
-
 
           {/* Show message if no projects found */}
           {filteredProjects.length === 0 && (
