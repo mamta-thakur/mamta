@@ -5,6 +5,8 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [activeTab, setActiveTab] = useState('All Projects');
+  const [selectedProject, setSelectedProject] = useState(null);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +36,9 @@ function App() {
   const projects = [
     {
       title: "Courier Service - AQUANTUO",
-      description: "The AQUANTUO project is an e-commerce and logistics platform that offers customized solutions for individuals, small businesses, and large enterprises. Their main goal is to connect Africa with the global market, providing efficient and tailored logistics services to save time and money for their customers. The project is built using Laravel 8, a popular PHP web application framework known for its robustness and ease of development.",
+      description: `The AQUANTUO project is an e-commerce and logistics platform that offers customized solutions for individuals, small businesses, and large enterprises. Their main goal is to connect Africa with the global market, providing efficient and tailored logistics services to save time and money for their customers.
+  
+  The project is built using Laravel 8, a popular PHP web application framework known for its robustness and ease of development.`,
       tech: ["Laravel", "MongoDB", "Slim", "Ajax", "Stripe", "Cellulent Tingg", "MTN"],
       category: "Laravel",
       image: "http://upwork.com/att/download/portfolio/persons/uid/1229104080431194112/profile/projects/files/11e34629-1b02-43a6-8189-750886ab4aa2",
@@ -43,7 +47,9 @@ function App() {
     },
     {
       title: "Online Course Platform",
-      description: "A comprehensive online course platform with user registration, course management, payment integration and admin dashboard. This project is designed to provide a seamless learning experience for users, allowing them to access a wide range of courses and manage their learning journey effectively. Courses will be available according to the user's subscription plan, ensuring that they have access to the content they need.",
+      description: `A comprehensive online course platform with user registration, course management, payment integration and admin dashboard. This project is designed to provide a seamless learning experience for users.
+  
+  Courses are available according to the user's subscription plan, ensuring that they have access to the content they need.`,
       tech: ["Laravel", "MySQL", "Vue.js", "Stripe"],
       category: "Laravel",
       image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -52,7 +58,9 @@ function App() {
     },
     {
       title: "Dating App",
-      description: "The Meetown project is a modern dating application with user profiles, chat functionality, and location-based matching features. It aims to connect travelers with others who share a similar passion for travel The platform serves as a meeting place for individuals seeking travel companions or simply looking to connect with like-minded people who enjoy exploring new places, cultures, and experiences.",
+      description: `The Meetown project is a modern dating application with user profiles, chat functionality, and location-based matching features. It aims to connect travelers with others who share a similar passion for travel.
+  
+  The platform serves as a meeting place for individuals seeking travel companions or like-minded people who enjoy exploring new cultures and experiences.`,
       tech: ["CodeIgniter", "MySQL", "Bootstrap", "jQuery"],
       category: "CodeIgniter",
       image: "http://upwork.com/att/download/portfolio/persons/uid/1229104080431194112/profile/projects/files/906d0c7a-cae9-4710-9636-91ef4bbafe8c",
@@ -61,7 +69,9 @@ function App() {
     },
     {
       title: "Monetization with articles",
-      description: "ITMOAMUN (I Take My Own Adventure, Model United Nations) appears to be a project built on WordPress, with a focus on empowering users to create custom articles related to Model United Nations (MUN) and other topics The project utilizes several technologies, with WordPress being the primary content management system.",
+      description: `ITMOAMUN (I Take My Own Adventure, Model United Nations) is a WordPress-based project focused on empowering users to create and monetize custom articles, especially for MUN and related topics.
+  
+  The project utilizes various web technologies with WordPress as the core, supported by plugins and payment systems.`,
       tech: ["WordPress", "Custom Plugin", "Ajax", "MySQL", "CSS3", "HTML5", "PayPal"],
       category: "WordPress",
       image: "http://upwork.com/att/download/portfolio/persons/uid/1229104080431194112/profile/projects/files/55c3cf07-e23e-4ff6-acd8-7addf97ee600",
@@ -70,7 +80,9 @@ function App() {
     },
     {
       title: "Waterfallsinks",
-      description: "Waterfall Sinks are equipped with an intelligent Smart Control Button for hands-free water drainage. Effortlessly manage water flow and drainage with a simple touch, revolutionizing cleanliness and convenience. Wave goodbye to messy hands and hello to seamless functionality The smart button takes care of your needs. Elevate your kitchen aesthetics and hygiene standards, and immerse yourself in the world of innovative design with our captivating Waterfall Sink.",
+      description: `Waterfall Sinks are equipped with an intelligent Smart Control Button for hands-free water drainage. Manage water flow and drainage with a simple touch, revolutionizing cleanliness and convenience.
+  
+  Wave goodbye to messy hands and hello to seamless functionality. The smart button takes care of your needs while enhancing kitchen aesthetics.`,
       tech: ["React", "Node.js", "MongoDB", "Socket.io"],
       category: "Wordpress",
       image: "http://upwork.com/att/download/portfolio/persons/uid/1229104080431194112/profile/projects/files/9e0f4b42-f6eb-4cb0-9d11-69d1c90978d2",
@@ -79,7 +91,9 @@ function App() {
     },
     {
       title: "FinsinHotel (Hotel Management Software)",
-      description: "Transform your hotel's operations with FinsinHotel - the ultimate management software solution for seamless efficiency and guest satisfaction! Why juggle multiple tools when we can manage our entire hotel effortlessly? FinsinHotel combines all our management needs into one powerful platform. Simplify our operations and focus on delivering top-notch service to your guests!",
+      description: `Transform your hotel's operations with FinsinHotel – the ultimate management software for seamless efficiency and guest satisfaction. It simplifies operations into one powerful platform.
+  
+  It’s an all-in-one solution to manage everything from booking to billing, letting hoteliers focus on providing top-notch guest service.`,
       tech: ["Laravel", "MySQL"],
       category: "Laravel",
       image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -88,7 +102,9 @@ function App() {
     },
     {
       title: "TV Show Fashion & Outfits",
-      description: "ShopYourTV is a website that assists viewers in recognizing and obtaining items from TV series. From apparel to vehicles to music, the site covers an array of products. With more than 1,500 shows and 20,000 items cataloged, ShopYourTV stands as the largest website of its kind.",
+      description: `ShopYourTV is a website that helps viewers identify and purchase products seen in TV series. It covers everything from clothing and accessories to vehicles and music.
+  
+  With over 1,500 shows and 20,000 items cataloged, it is the largest website of its kind in this niche.`,
       tech: ["Wordpress", "MySQL", "Ajax", "jQuery", "AWS S3"],
       category: "Wordpress",
       image: "https://upwork.com/att/download/portfolio/persons/uid/1229104080431194112/profile/projects/files/678bae2c-235e-463d-9e82-7eff9974ad3a",
@@ -97,7 +113,9 @@ function App() {
     },
     {
       title: "FinsinERP",
-      description: "FinsinERP is a comprehensive CRM solution designed to streamline and automate customer relationship management operations. It offers a range of features to enhance customer interactions, manage leads, and improve overall business efficiency.",
+      description: `FinsinERP is a comprehensive CRM system designed to streamline customer management, lead tracking, and overall business workflow. It boosts operational efficiency and customer satisfaction.
+  
+  This tool is ideal for businesses looking to automate and enhance their client engagement strategies.`,
       tech: ["Laravel", "MySQL", "jQuery", "Ajax"],
       category: "Laravel",
       image: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -106,16 +124,20 @@ function App() {
     },
     {
       title: "Pure Healthy Fit",
-      description: "Pure Healthy Fit is a prominent nonprofit health website that focuses on medical education and research in the field of health and wellness As a leading platform, its primary goal is to provide reliable and up-to-date information to its users, enabling them to make informed decisions about their health and well-being.",
+      description: `Pure Healthy Fit is a nonprofit health and wellness platform focusing on medical education, research, and awareness. It aims to deliver reliable, up-to-date information for health-conscious users.
+  
+  Its goal is to help individuals make informed decisions about their health through well-researched and community-driven content.`,
       tech: ["WordPress", "MySQL", "jQuery", "Bootstrap", "Ajax"],
       category: "WordPress",
       image: "http://upwork.com/att/download/portfolio/persons/uid/1229104080431194112/profile/projects/files/196ec2c4-15b0-45fc-9eb8-37b3de90eabf",
-      demoLink: "purehealthyfit.com",
+      demoLink: "https://purehealthyfit.com/",
       codeLink: ""
     },
     {
       title: "Shoprocket",
-      description: "The Shoprocket project is a solution that allows users to add a fully responsive shopping cart and create a complete online store with ease It is designed to be integrated into existing websites, blogs, or landing pages, enabling users to start selling products online without the need for advanced coding skills.",
+      description: `The Shoprocket project helps users integrate a responsive shopping cart and online store into their existing sites. It's designed to make selling products online effortless.
+  
+  Users can launch stores without deep technical knowledge, using Stripe and PayPal for payment processing.`,
       tech: ["CodeIgniter", "MySQL", "Bootstrap", "Node.js", "Ajax", "Stripe", "PayPal"],
       category: "CodeIgniter",
       image: "http://upwork.com/att/download/portfolio/persons/uid/1229104080431194112/profile/projects/files/c7fed144-9111-45b9-bab2-173292d41d35",
@@ -124,9 +146,9 @@ function App() {
     },
     {
       title: "Fitness Training and Holistic Nutrition",
-      description: "Eatgoodfeelgood is an online support group and weight loss coaching program designed to help individuals who struggle with emotional eating, binge eating, late-night eating, and diet sabotage The platform aims to provide a supportive and nurturing environment for individuals seeking to overcome their challenges with food and achieve their weight loss goals.\
-      \
-      The website is built using a combination of technologies, including core PHP and WordPress. Core PHP is likely used for custom backend functionality, data handling, and other server-side operations.",
+      description: `Eatgoodfeelgood is an online coaching program for emotional eating, diet sabotage, and weight loss support. It offers a nurturing environment for individuals to achieve healthier habits.
+  
+  Built with Core PHP and WordPress, the platform features custom backend logic and interactive user tools.`,
       tech: ["Core PHP", "MySQL", "JavaScript", "PayPal", "WordPress", "Bootstrap", "Ajax"],
       category: "Core PHP",
       image: "http://upwork.com/att/download/portfolio/persons/uid/1229104080431194112/profile/projects/files/a197692e-9121-4165-882a-f74cd7da33e9",
@@ -134,6 +156,7 @@ function App() {
       codeLink: ""
     }
   ];
+  
 
   const filteredProjects = activeTab === 'All Projects' 
     ? projects 
@@ -384,7 +407,7 @@ function App() {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div key={index} onClick={() => setSelectedProject(project)} className="cursor-pointer bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -392,7 +415,9 @@ function App() {
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-slate-800 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <p className="text-gray-600 mb-4">
+                    {project.shortDescription || project.description.split("\n")[0]}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span key={tech} className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">
@@ -416,6 +441,64 @@ function App() {
               </div>
             ))}
           </div>
+
+          {selectedProject && (
+            <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+              <div className="bg-white max-w-3xl w-full p-6 rounded-xl relative overflow-y-auto max-h-[90vh]">
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
+                >
+                  &times;
+                </button>
+
+                {/* Project Image */}
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-64 object-cover rounded-md mb-6"
+                />
+
+                {/* Title */}
+                <h2 className="text-2xl font-bold text-slate-800 mb-4">
+                  {selectedProject.title}
+                </h2>
+
+                {/* Full Description */}
+                <div className="text-gray-700 space-y-4 mb-6">
+                  {selectedProject.description.split("\n").map((para, idx) => (
+                    <p key={idx}>{para.trim()}</p>
+                  ))}
+                </div>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {selectedProject.tech.map((tech: string) => (
+                    <span
+                      key={tech}
+                      className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Demo Link */}
+                {selectedProject.demoLink && (
+                  <a
+                    href={selectedProject.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 text-blue-600 underline"
+                  >
+                    View Live Demo
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
 
           {/* Show message if no projects found */}
           {filteredProjects.length === 0 && (
